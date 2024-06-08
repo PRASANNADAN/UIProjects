@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    width: 100%;
+    background-color: rgb(232, 240, 247);
+    height: 600px;
+}
+.header {
+    height: 60px;
+    border: 1px solid #ccc;
+    background-color: darkorange;   
+}
+
+#logo {
+    color:  darkblue;
+    font-weight: 700px;
+    padding-top: 20px;
+    padding-left: 10px;   ;
+    font-style: normal;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.loginbox {
+    height: 430px;
+    width: 400px;
+    background-color: white;
+    padding: 10px;
+    position: relative;
+    top: 50px;
+    margin: 10px auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.loginbox input {
+    width: 350px;
+    padding:15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid gainsboro;
+}
+
+.nameErr {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+#captchaBox {
+    height: 30px;
+    width: 200px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: #ccc;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-size: xx-large;
+    display: inline-block;
+}
+
+#capLoad {
+    /* text-decoration: none; */
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    background-color: blue;
+    /* float: right; */
+    padding: 0px
+}
+
+img {
+    height: 25px;
+    width: 25px;
+}
+
+.capErr {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+button {
+    width: 384px;
+    padding:15px;
+    margin-top: 10px;
+    background-color: #1877f2;
+    color: white;
+    font-weight: bolder;
+    font-size: larger;
+    border: none;
+    border-radius: 5px;
+}
+
+.linkContainer {
+    margin-top: 10px ;
+    padding: 5px;
+    position: relative;
+}
+
+.links {
+    margin-top: 10px ;
+    color: #1877f2;
+    /*padding: 5px;*/
+    /*text-align: center;*/
+    display: inline-block;
+}
+
+#fpwd {
+    text-align: left;
+    position: relative;
+    left: -60px;
+}
+
+#signup {
+    text-align: right;
+    position: relative;
+    right: -60px;
+}
+.footer {
+    text-align: center;
+    margin-top: 30px;
+}

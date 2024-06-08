@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GRID AND FLEX CONTAINER</title>
+        <style>
+            body {
+                background-color: teal;
+            }
+            .mainCon {
+                width: 1150px;
+                height: 600px;
+                border: 1px solid black;
+                margin: 20px auto;
+                padding: 5px;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-template-rows: auto auto auto;
+                gap: 20px 40px;
+                background-color: darkmagenta;
+            }
+            .subCon {
+                width: 300px;
+                height: 150px;
+                border: 1px solid black;
+                margin: 10px;
+                padding: 5px;
+                background-color: black;
+                /* display: flex; */
+            }
+            span {
+                display: inline-block;
+                margin: 2px;
+            }
+            .hbtn {
+                width: 10px;
+                height: 10px;
+                border: 1px solid ;
+                border-radius: 50%;
+                background-color: white;
+            }
+            .searchBar {
+                height: 10px;
+                width: 220px;
+                background-color: white;
+            }
+            .s1 {
+                background-color: red;
+            }
+            .s2 {
+                background-color: orange;
+            }
+            .s3 {
+                background-color: lightgreen;
+            }
+            .minCon1 {
+                margin: 3px;
+                display: grid;
+                grid-template-columns: 95px 95px auto;
+                grid-template-rows: 55px 55px;
+                gap: 10px 10px;
+            }
+            .minCon2 {
+                margin: 3px;
+                width: 295px;
+                height: 110px;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                grid-template-rows: auto auto;
+                gap: 10px;
+            }
+            .minCon3 {
+                margin: 3px;
+                width: 295px;
+                height: 110px;
+                display: grid;
+                grid-template-columns: 40px 40px auto;
+                grid-template-rows: 25px auto 25px;
+                gap: 10px;
+            }
+            .minCon4 {
+                margin: 3px;
+                width: 295px;
+                height: 110px;
+                display: grid;
+                grid-template-columns: 75px 60px auto;
+                grid-template-rows: 25px 50px 25px;
+                gap: 7px 5px;
+            }
+            .minCon5 {
+                margin: 3px;
+                width: 295px;
+                height: 110px;
+                display: grid;
+                grid-template-columns: auto auto auto auto auto auto;
+                grid-template-rows: auto auto auto;
+                gap: 7px 2px;
+            }
+            .c5 .block {
+                width: 44px;
+                height: 35px;
+            }
+            .minCon6 {
+                margin: 3px;
+                width: 295px;
+                height: 110px;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                grid-template-rows: 18px 18px 18px 18px 18px    ;
+                gap: 7px 5px;
+            }
+            .minCon7 {
+                margin: 3px;
+                width: 295px;
+                height: 110px;
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: 30px auto;
+                gap: 5px 5px;
+            }
+            .subB {
+                padding: 5px;
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 7px 5px;
+            }
+            .minCon8 {
+                margin: 3px;
+                width: 295px;
+                height: 110px;
+                display: grid;
+                grid-template-columns: 55px 55px 55px 55px auto;
+                gap: 7px 5px;
+            }
+            .minCon9 {
+                margin: 3px;
+                width: 295px;
+                height: 110px;
+                display: grid;
+                grid-template-columns: auto auto auto;
+                gap: 7px 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mainCon">
+            <div class="subCon c1">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon1">
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: darkorange;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: green;"></div>
+                    <div class="block" style="background-color: lightgreen;"></div>
+                </div>
+            </div>
+            <div class="subCon c2">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon2">
+                    <div class="block" style="background-color: red; grid-column: 1/3;"></div>
+                    <div class="block" style="background-color: orange; grid-column: 3/4; grid-row: 1/3;"></div>
+                    <div class="block" style="background-color: darkgreen; grid-column: 1/2;"></div>
+                    <div class="block" style="background-color: green; grid-column: 2/3;"></div>
+                </div>
+            </div>
+            <div class="subCon c3">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon3">
+                    <div class="block" style="background-color: orange; grid-column:1/4"></div>
+                    <div class="block" style="background-color: darkgreen; grid-column: 1/3;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: green; grid-column:1/4;"></div>
+                </div>
+            </div>
+            <div class="subCon c4">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon4">
+                    <div class="block" style="background-color: darkorange;  grid-column: 1/3;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: lightgreen; grid-column: 2/4;"></div>
+                    <div class="block" style="background-color: orange; grid-column: 1/4;"></div>
+                </div>
+            </div>
+            <div class="subCon c5">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon5">
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: darkorange;"></div>
+                    <div class="block" style="background-color: green;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: lightgreen;"></div>
+                    <div class="block" style="background-color: darkorange;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: darkorange;"></div>
+                    <div class="block" style="background-color: green;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: lightgreen;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: lightgreen;"></div>
+                </div>
+            </div>
+            <div class="subCon c6">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon6">
+                    <div class="block" style="background-color: red; grid-column: 1/3;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                    <div class="block" style="background-color: darkorange;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: green;"></div>
+                    <div class="block" style="background-color: orange; grid-column: 1/3; grid-row: 3/5;"></div>
+                    <div class="block" style="background-color: lightgreen; grid-column: 3/4;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: lightgreen;  grid-column: 1/4;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                </div>
+            </div>
+            <div class="subCon c7">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon7">
+                    <div class="block" style="background-color: orange;"></div>
+                    <div class="block" style="background-color: lightgreen;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block subB" style="background-color: darkgreen;">
+                        <div class="block" style="background-color: lightgreen; grid-column: 1/3;"></div>
+                        <div class="block" style="background-color: green;"></div>
+                        <div class="block" style="background-color: orange;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="subCon c8">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon8">
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                    <div class="block" style="background-color: lightgreen;"></div>
+                    <div class="block" style="background-color: green;"></div>
+                    <div class="block" style="background-color: darkgreen;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: darkorange; grid-column: 3/6;"></div>
+                    <div class="block" style="background-color: lightgreen; grid-column: 1/6;"></div>
+                </div>
+            </div>
+            <div class="subCon c9">
+                <header>
+                    <span class="s1 hbtn"></span>
+                    <span class="s2 hbtn"></span>
+                    <span class="s3 hbtn"></span>
+                    <span class="searchBar"></span>
+                </header>
+                <div class="minCon9">
+                    <div class="block" style="background-color: orange;  grid-column: 1/4;"></div>
+                    <div class="block" style="background-color: darkgreen; grid-row: 2/4;"></div>
+                    <div class="block" style="background-color: lightgreen; grid-column: 2/4;"></div>
+                    <div class="block" style="background-color: red;"></div>
+                    <div class="block" style="background-color: orange;"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

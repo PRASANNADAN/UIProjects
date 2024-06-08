@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SignUp for MyShop</title>
+        <link rel="stylesheet" href="../css_Files/signupPage.css">
+        <script src="../Javascript_Files/signupPage.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <a href="../homePage.html" class="logo"><h2 id="logo">MyShop</h2></a>
+            </div>
+            <div class="signupbox">
+                <div class="signupText">Register to MyShop</div>
+                <input type="text" id="uFName" placeholder="First Name" onkeypress="show(event)">
+                <input type="text" id="uSName" placeholder="Last name">
+                <div id="nameErr">*name is Required</div>
+                <input type="text" id="uMail" placeholder="Enter Mail Address">
+                <div id="mailErr">*Mail is Required</div>
+                <input type="password" id="pswd" placeholder="Enter Password" maxlength="10" onkeyup = "validatePass(event)" onkeypress="validateChange(event)" onkeypress=" return validateSpace(event)">
+                <input type="checkbox"  id="showPass" onchange="showPass(event)">Show Password</input>
+                <div id="pswdErr">*Password is Required</div>
+                <ul id="passRequriements">
+                    <li class="pwdLength">
+                        Min. length of 8 chars
+                    </li>
+                    <li class="pwdChar">
+                        Must Include One Special Char @,#,$,^,& only
+                    </li>
+                    <li class="pwdUppercase">
+                        Start with Uppercase
+                    </li>
+                    <li class="pwdNum">
+                        Must Include atleast ONE Number
+                    </li>
+                    <li class="pwdSpace">
+                        No Spaces Allowed
+                    </li>
+                 </ul>
+                <input type="password" id="rpswd" placeholder="Re-Enter Password">
+                <div id="pwdErr">Password Do Not Match</div>
+                <button onclick="obj.register()">REGISTER</button>
+            </div>
+        </div>
+    </body>
+</html>

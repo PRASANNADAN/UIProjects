@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    width: 100%;
+    background-color: rgb(232, 240, 247);
+    height: 600px;
+}
+.header {
+    height: 60px;
+    border: 1px solid #ccc;
+    background-color: darkorange;   
+}
+
+#logo {
+    color:  darkblue;
+    width: 200px;
+    font-weight: 700px;
+    padding-top: 20px;
+    padding-left: 10px;
+    font-style: normal;
+    display: inline-block;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+h5 {
+    display: inline;
+    font-size: large;
+    margin: 10px;
+}
+
+#sbox {
+    display: inline-block;
+    height: 40px;
+    width: 300px;
+    font-size: larger;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#country {
+    height: 35px;
+    width: 150px;
+    background-color: red;
+    float: right;
+    margin: 10px;
+}
+
+.img {
+    /* display: inline-block; */
+    float: right;
+    padding-right: 20px;
+}
+
+.img img {
+    height: 40px;
+    width: 40px;
+    /* margin: 10px; */
+    margin-top: 5px;
+    float: right;
+}
+
+button {
+    height: 35px;
+    width: 80px;
+    margin: 10px;
+    float: right;
+}
+
+.productDetailsContainer > li {
+    width: 220px;   
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    list-style: none;
+    float: left;
+}
+
+img {
+    width: 200px;
+    height: 150px;
+}
+.singleProduct li {
+    border-bottom: 1px solid orange;
+    list-style: none;
+    margin: 1px;
+    padding: 5px;
+}
+.singleProduct {
+    margin: 5px;
+    padding: 5px;
+}
+.actualPrice {
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-line: line-through;
+}
+
+.discountedPrice {
+    font-weight: bold;
+    color: darkgreen;
+    margin-left: 10px;
+}
+
+.slider {
+    height: 200px;
+    border: 1px solid #ccc;
+    margin: 10px 0px;
+}
+
+.slider img {
+    height: 200px;
+    width: 750px;
+}
+
+.catgBox {
+    height: 510px;
+    background-color: aquamarine;
+    margin: 10px;
+    padding: 5px;
+}
+
+.catgBox div {
+    display: inline-block;
+    width: 436px;
+    height: 505px;
+    margin: 0px 20px;
+    border: 1px solid #ccc;
+    /* background-image: url(images/category.png); */
+}
+
+.cat1 {
+    margin-left: 40px !important; 
+}
+
+.cat2 {
+    background-position: -462px 0px;
+}
+
+.cat3 {
+    background-position: 898px 0px;
+}
+
+.cat4 {
+    background-position: 10px 0px;
+}

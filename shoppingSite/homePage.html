@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MyShop</title>
+        <link rel="stylesheet" href="css_Files/homePage.css">
+        <link rel="stylesheet" href="libs/starRatingLib/starRating.css">
+        <script src="Javascript_Files/countries.js"></script>
+        <script src="libs/starRatingLib/rating.js"></script>
+        <script src="libs/jquery.js"></script>
+        <script src="Javascript_Files/data.js"></script>
+        <script src="Javascript_Files/option.js"></script>
+        <script src="Javascript_Files/homePage.js"></script>
+    </head>
+    <body>
+        <div class="header">
+            <a href="homePage.html" class="logo"><h2 id="logo">MyShop</h2></a>
+            <h5>HOME</h5>
+            <h5>CATEGORIES</h5>
+            <h5>ABOUT</h5>
+            <h5>FAQ's</h5>
+        <input type="text" id="sbox" placeholder="Search">
+        <div class="img"><img src="images/cart.png" alt=""></div>
+        <button onclick="obj.login()">LOGIN</button>
+        <button onclick="obj.signUp()">SIGNUP</button>
+        <select id="country"></select>
+        </div>
+        <div class="slider">
+            <img src="images/slide1.jpg" alt="">
+            <img src="images/slide2.jpg" alt="">
+            <!-- <img src="images/slide4.jpg" alt=""> -->
+        </div>
+        <div class="catgBox">
+            <div class="cat1" style="background-image: url(images/category.png);"></div>
+            <div class="cat2" style="background-image: url(images/category.png);"></div>
+            <div class="cat3" style="background-image: url(images/category.png);"></div>
+            <!-- <div class="cat4" style="background-image: url(images/category.png);"></div> -->
+        </div>
+        <ul class="productDetailsContainer"></ul>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login in to MyShop</title>
+        <link rel="stylesheet" href="../css_Files/loginPage.css">
+        <script src="../Javascript_Files/loginPage.js"></script>
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <a href="../homePage.html" class="logo"><h2 id="logo">MyShop</h2></a>
+            </div>
+            <div class="loginbox">
+                <div class="loginText">Login in to MyShop</div>
+                <input type="text" id="uName" placeholder="User name">
+                <div class="nameErr">Name is Required</div>
+                <input type="password" placeholder="Password">
+                <div>
+                    <div id="captchaBox"></div>
+                    <button id="capLoad">
+                        <img src="../images/reload.png" alt="" onclick="generateCaptcha()">
+                    </button>
+                </div>
+                <input type="text" id="captcha" placeholder="Enter Captcha">
+                <div class="capErr">Invalid Captcha</div>
+                <button onclick="obj.openTab()">Log in</button>
+                <div class="linkContainer">
+                <a href="forgotPswd.html" target="_blank" class="links" id="fpwd">Forgot password?</a>
+                <a href="signUppage.html"  target="_blank" class="links" id="signup">Sign Up for MyShop</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+
+        </div>
+        <script src="../Javascript_Files/captcha.js"></script>
+    </body>
+</html>
