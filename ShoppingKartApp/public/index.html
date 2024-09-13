@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>HUNTER</title>
+      <script src="lib/axios.js"></script>
+      <script src="lib/jquery.js"></script>
+      <script src="lib/handlebar.js"></script>
+      <link rel="stylesheet" href="lib/bootstrap-icons/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+      <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="custom_lib/starRatingLib/starRating.css">
+      <script src="custom_lib/starRatingLib/rating.js"></script>
+
+      <link rel="stylesheet" href="css/app.css">
+      <link rel="stylesheet" href="css/signup.css">
+      <link rel="stylesheet" href="css/login.css">
+      <link rel="stylesheet" href="css/productDetailsPage.css">
+
+      <script src="javascripts/login.js"></script>
+      <script src="javascripts/signup.js"></script>
+      <script src="custom_lib/captchaGenerator.js"></script>
+      <script src="javascripts/frgtPswd.js"></script>
+      <script src="javascripts/index.js"></script>
+      <script src="javascripts/loadProductDetails.js"></script>
+      <script src="javascripts/logout.js"></script>
+  </head>
+  <body>
+    <!--NavBar-->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="images/android-chrome-256x256.png" alt="#">HUNTER</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Categories</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+              <button id="loginBtn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModel" onclick="updateCaptchaText()">
+                Login
+              </button>
+              <button id="signupBtn" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModel" onclick="updateSignupCaptchaText()">
+                Signup
+              </button>
+              <button id="logoutBtn" type="button" class="btn btn-primary rightSide btnsColor" data-bs-toggle="modal" data-bs-target="#logOutModel">
+                Logout
+              </button>
+              <i class="bi bi-cart3 h2"></i> 
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container"> 
+      <main>
+        
+      </main>
+      <!--Login Model-->
+      <div class="modal fade" id="loginModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog   modal-dialog-centered modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5 h2" id="staticBackdropLabel">Login block</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <ul>
+                    <li>
+                        <input type="text" class="form-control" placeholder="User account Id" id="accountId">
+                    </li>
+                    <li>
+                        <input type="password" class="form-control" placeholder="Account Password" id="accountPassword" maxlength="8" onchange ="loginpwdreq(event)">
+                        <p id="signinpwdErr">*Password Should Be 8 Letters</p>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="check"> Rememer my credentials
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Enter the text below" id="captcha">
+                        <p id="signincapErr">Invalid Captcha</p>
+                    </li>
+                    <div class="captchaContainer">
+                      <img src="" id="captchaImage">
+                      <div style="display: inline;">
+                        <button onclick="updateCaptchaText()"><i class="bi bi-bootstrap-reboot"></i></button>
+                      </div>
+                    </div>
+                    <li id="errMsgBlock"></li>
+                  </ul>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary" onclick="readUserDetails()">Validate</button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#forgotPswdModel" onclick="updateFrgtpwdCaptchaText()">Forgot Password</button>
+                </div>
+              </div>
+            </div>
+      </div>
+      <!--SignUP Model-->
+      <div class="modal fade" id="signupModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog   modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Signup block</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ul>
+                <li>
+                    <input type="text" class="form-control" placeholder="User account Id" id="signup_accountId">
+                </li>
+                <li>
+                    <input type="password" class="form-control" placeholder="Account Password" id="signup_accountPassword">
+                </li>
+                <ul id="passRequriements">
+                  <li class="pwdLength">
+                      Min. length of 8 chars
+                  </li>
+                  <li class="pwdChar">
+                      Must Include One Special Char @,#,$,^,& only
+                  </li>
+                  <li class="pwdUppercase">
+                      Start with Uppercase
+                  </li>
+                  <li class="pwdNum">
+                      Must Include atleast ONE Number
+                  </li>
+                  <li class="pwdSpace">
+                      No Spaces Allowed
+                  </li>
+               </ul>
+                <li>
+                  <input type="password" class="form-control" placeholder="Re-Enter Account Password" id="validpswd">
+                  <p id="pwdErr">Password Do Not Match</p>
+                </li>
+                <li>
+                  <input type="text" placeholder="Enter the text below" id="userSignupcaptchaText">
+                  <p id="signupcapErr">Invalid Captcha</p>
+                </li>                        
+                <div class="captchaContainer">
+                  <img src="" id="signupCaptchaImage">
+                  <div style="display: inline;">
+                    <button onclick="updateSignupCaptchaText()"><i class="bi bi-bootstrap-reboot"></i></button>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" onclick="readUserDetails()">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--forgot Password Model-->
+      <div class="modal fade" id="forgotPswdModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog   modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Forgot Password</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <ul>
+                <li>
+                    <input type="text" class="form-control" placeholder="User Mail Id" id="frgtPwd_mailId">
+                </li>
+                <li>
+                  <input type="text" placeholder="Enter the text below" id="userFrgtPwdCaptchaText">
+                  <p id="frgtpwdcapErr">Invalid Captcha</p>
+                </li>
+                <div class="captchaContainer">
+                  <img src="" id="frgPwdCaptchaImage">
+                  <div style="display: inline;">
+                    <button onclick="updateFrgtpwdCaptchaText()"><i class="bi bi-bootstrap-reboot"></i></button>
+                  </div>
+                </div>
+                <li id="frgtpwdmsg">
+                  <b>*The Link Has Been Sent To Your Mail </b>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModel">Back to Login</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary" onclick="frgtpswd()">Send mail</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Logout Model-->
+      <div class="modal fade" id="logOutModel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog   modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Logout Session</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body logoutContent">
+              Do you want to logout from this Website ?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Cancel</button>
+              <button type="button" class="btn btn-primary" onclick="logoutUser()">Logout</button>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        </ul>
+        <p class="text-center text-muted">© 2024 HUNTER, Inc</p>
+      </footer>
+    </div>
+    <div style="display: none;"><canvas id="captchaCanvas"></canvas>
+  </body>
+</html>

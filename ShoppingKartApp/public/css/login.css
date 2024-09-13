@@ -1,0 +1,48 @@
+.modal-body ul {
+    margin: 10px;
+    li {
+        margin: 10px;
+        list-style: none;
+        color: #fff;
+    }
+    p {
+        color: red;
+        display: none;
+    }
+}
+.modal-body img {
+    height: 50px;
+}
+main {
+    position: relative;
+}
+.modal-content {
+    background-image: url(../images/modalbg.avif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#staticBackdropLabel {
+    font-size: x-large !important;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+canvas {
+    height: 100px;
+    width: 250px;
+    background-color: grey;
+}
+.cards1 {
+    position: relative ;
+    top: -195px;
+}
+#frgtpwdmsg {
+    color: green;
+    display: none;
+    text-align: center;
+}
+#errMsgBlock {
+    color: red;
+    text-align: center;
+    font-weight: bolder;
+}

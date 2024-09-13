@@ -1,0 +1,28 @@
+header {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+}
+.navbar-brand {
+    font-size: x-large;
+    font-family: cursive;
+    img{
+        height: 25px;
+        border-radius: 45px;
+        margin-right: 5px;
+    }
+}
+button {
+    margin: 3px;
+}
+
+main {
+    min-height: 700px;  
+
+}
+
+footer {
+    background-color: #ccc;
+    padding: 20px;
+}
+
